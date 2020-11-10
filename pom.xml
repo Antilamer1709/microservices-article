@@ -25,7 +25,9 @@
     </dependencies>
 
     <modules>
-        <module>core</module>
+        <module>application</module>
+        <module>inventory</module>
+        <module>orders</module>
     </modules>
 
 </project>
