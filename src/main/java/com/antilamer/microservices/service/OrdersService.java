@@ -14,7 +14,7 @@ public class OrdersService {
         if (!productAvailable) {
             return "Product with id " + productId + " is not available";
         }
-        return "Order has been created!";
+        return "Order of product with id " + productId + " has been created!";
     }
 
 }
