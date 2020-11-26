@@ -3,26 +3,19 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>microservices-presentation</artifactId>
-        <groupId>com.antilamer</groupId>
+        <artifactId>inventory</artifactId>
+        <groupId>com.antilamer.inventory</groupId>
         <version>1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>orders</artifactId>
-    <groupId>com.antilamer.orders</groupId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>database</module>
-        <module>service</module>
-        <module>controller</module>
-    </modules>
+    <artifactId>controller</artifactId>
 
     <dependencies>
 
         <dependency>
-            <groupId>com.antilamer</groupId>
-            <artifactId>inventory</artifactId>
+            <groupId>com.antilamer.inventory</groupId>
+            <artifactId>service</artifactId>
             <version>1.0</version>
         </dependency>
 
