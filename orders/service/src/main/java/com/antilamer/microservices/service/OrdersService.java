@@ -1,5 +1,8 @@
 package com.antilamer.microservices.service;
 
+import com.antilamer.microservices.domain.OrderEntity;
+import com.antilamer.microservices.dto.OrderDTO;
+import com.antilamer.microservices.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -7,14 +10,23 @@ import org.springframework.stereotype.Service;
 public class OrdersService {
 
     @Autowired
+    private OrderRepository orderRepository;
+
+    @Autowired
     private InventoryService inventoryService;
 
-    public String createOrder(Integer productId) {
-        Boolean productAvailable = inventoryService.isProductAvailable(productId);
+    public OrderDTO getOrder(Integer orderId) {
+        OrderEntity orderEntity = orderRepository.findById(orderId);
+        return new OrderDTO(orderEntity);
+    }
+
+    public String createOrder(OrderDTO orderDTO) {
+        Boolean productAvailable = inventoryService.isProductAvailable(orderDTO.getProductId());
         if (!productAvailable) {
-            return "Product with id " + productId + " is not available";
+            return "Product with id " + orderDTO.getProductId() + " is not available";
         }
-        return "Order of product with id " + productId + " has been created!";
+        orderRepository.save(new OrderEntity(orderDTO.getProductId(), orderDTO.getName()));
+        return "Order of product with id " + orderDTO.getProductId() + " has been created!";
     }
 
 }

@@ -1,11 +1,21 @@
 package com.antilamer.microservices.dto;
 
+import com.antilamer.microservices.domain.OrderEntity;
+
 public class OrderDTO {
 
     private Integer id;
-    private Integer prise;
+    private Integer productId;
     private String name;
 
+    public OrderDTO() {
+    }
+
+    public OrderDTO(OrderEntity orderEntity) {
+        this.id = orderEntity.getId();
+        this.productId = orderEntity.getProductId();
+        this.name = orderEntity.getName();
+    }
 
     public Integer getId() {
         return id;
@@ -15,12 +25,12 @@ public class OrderDTO {
         this.id = id;
     }
 
-    public Integer getPrise() {
-        return prise;
+    public Integer getProductId() {
+        return productId;
     }
 
-    public void setPrise(Integer prise) {
-        this.prise = prise;
+    public void setProductId(Integer productId) {
+        this.productId = productId;
     }
 
     public String getName() {

@@ -3,8 +3,16 @@ package com.antilamer.microservices.domain;
 public class OrderEntity {
 
     private Integer id;
-    private Integer prise;
+    private Integer productId;
     private String name;
+
+    public OrderEntity() {
+    }
+
+    public OrderEntity(Integer id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
 
     public Integer getId() {
@@ -15,12 +23,12 @@ public class OrderEntity {
         this.id = id;
     }
 
-    public Integer getPrise() {
-        return prise;
+    public Integer getProductId() {
+        return productId;
     }
 
-    public void setPrise(Integer prise) {
-        this.prise = prise;
+    public void setProductId(Integer productId) {
+        this.productId = productId;
     }
 
     public String getName() {
@@ -30,4 +38,5 @@ public class OrderEntity {
     public void setName(String name) {
         this.name = name;
     }
+
 }

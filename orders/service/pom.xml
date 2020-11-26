@@ -12,4 +12,15 @@
     <artifactId>service</artifactId>
 
 
+    <dependencies>
+
+        <dependency>
+            <groupId>com.antilamer.orders</groupId>
+            <artifactId>database</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+    </dependencies>
+
+
 </project>
