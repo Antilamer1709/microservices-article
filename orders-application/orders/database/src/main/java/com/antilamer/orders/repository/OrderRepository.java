@@ -1,6 +1,6 @@
-package com.antilamer.microservices.repository;
+package com.antilamer.orders.repository;
 
-import com.antilamer.microservices.domain.OrderEntity;
+import com.antilamer.orders.domain.OrderEntity;
 import org.springframework.stereotype.Repository;
 
 @Repository

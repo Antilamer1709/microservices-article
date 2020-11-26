@@ -1,6 +1,6 @@
-package com.antilamer.microservices.controller;
+package com.antilamer.inventory.controller;
 
-import com.antilamer.microservices.service.InventoryService;
+import com.antilamer.inventory.service.InventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

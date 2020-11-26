@@ -1,7 +1,7 @@
-package com.antilamer.microservices.controller;
+package com.antilamer.orders.controller;
 
-import com.antilamer.microservices.dto.OrderDTO;
-import com.antilamer.microservices.service.OrdersService;
+import com.antilamer.orders.dto.OrderDTO;
+import com.antilamer.orders.service.OrdersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

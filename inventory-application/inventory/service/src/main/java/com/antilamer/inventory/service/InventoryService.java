@@ -1,4 +1,4 @@
-package com.antilamer.microservices.service;
+package com.antilamer.inventory.service;
 
 import org.springframework.stereotype.Service;
 

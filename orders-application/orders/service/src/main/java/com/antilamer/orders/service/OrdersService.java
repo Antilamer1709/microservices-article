@@ -1,8 +1,9 @@
-package com.antilamer.microservices.service;
+package com.antilamer.orders.service;
 
-import com.antilamer.microservices.domain.OrderEntity;
-import com.antilamer.microservices.dto.OrderDTO;
-import com.antilamer.microservices.repository.OrderRepository;
+import com.antilamer.inventory.service.InventoryService;
+import com.antilamer.orders.domain.OrderEntity;
+import com.antilamer.orders.dto.OrderDTO;
+import com.antilamer.orders.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

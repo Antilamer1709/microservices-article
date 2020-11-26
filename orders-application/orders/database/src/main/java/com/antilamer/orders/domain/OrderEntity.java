@@ -1,21 +1,19 @@
-package com.antilamer.microservices.dto;
+package com.antilamer.orders.domain;
 
-import com.antilamer.microservices.domain.OrderEntity;
-
-public class OrderDTO {
+public class OrderEntity {
 
     private Integer id;
     private Integer productId;
     private String name;
 
-    public OrderDTO() {
+    public OrderEntity() {
     }
 
-    public OrderDTO(OrderEntity orderEntity) {
-        this.id = orderEntity.getId();
-        this.productId = orderEntity.getProductId();
-        this.name = orderEntity.getName();
+    public OrderEntity(Integer id, String name) {
+        this.id = id;
+        this.name = name;
     }
+
 
     public Integer getId() {
         return id;

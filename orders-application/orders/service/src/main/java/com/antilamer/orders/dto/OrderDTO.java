@@ -1,6 +1,6 @@
-package com.antilamer.microservices.dto;
+package com.antilamer.orders.dto;
 
-import com.antilamer.microservices.domain.OrderEntity;
+import com.antilamer.orders.domain.OrderEntity;
 
 public class OrderDTO {
 
