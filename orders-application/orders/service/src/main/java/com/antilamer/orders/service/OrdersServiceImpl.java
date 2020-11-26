@@ -5,6 +5,7 @@ import com.antilamer.orders.domain.OrderEntity;
 import com.antilamer.orders.dto.OrderDTO;
 import com.antilamer.orders.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,6 +15,7 @@ public class OrdersServiceImpl implements OrdersService {
     private OrderRepository orderRepository;
 
     @Autowired
+    @Qualifier("InventoryNot2Service")
     private InventoryService inventoryService;
 
     @Override
