@@ -1,16 +1,7 @@
 package com.antilamer.inventory.service;
 
-import org.springframework.stereotype.Service;
+public interface InventoryService {
 
-@Service
-public class InventoryService {
-
-    public Boolean isProductAvailable(Integer productId) {
-        if (productId < 10) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+    Boolean isProductAvailable(Integer productId);
 
 }
