@@ -11,11 +11,11 @@
 
     <artifactId>inventory</artifactId>
     <packaging>pom</packaging>
+
     <modules>
         <module>database</module>
         <module>service</module>
         <module>controller</module>
     </modules>
-
 
 </project>

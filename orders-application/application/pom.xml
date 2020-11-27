@@ -13,6 +13,8 @@
 
     <dependencies>
 
+        <!--INTERNAL-->
+
         <!--Orders-->
         <dependency>
             <groupId>com.antilamer.orders</groupId>
@@ -37,6 +39,8 @@
             <version>1.0</version>
         </dependency>
 
+
+        <!--EXTERNAL-->
 
         <dependency>
             <groupId>com.h2database</groupId>

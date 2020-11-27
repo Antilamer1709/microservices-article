@@ -12,6 +12,7 @@
     <artifactId>database</artifactId>
 
     <dependencies>
+        <!--Mustn't depend on it. All communication should occur ONLY through service layer It's here only to show such possibility-->
         <dependency>
             <groupId>com.antilamer.inventory</groupId>
             <artifactId>database</artifactId>

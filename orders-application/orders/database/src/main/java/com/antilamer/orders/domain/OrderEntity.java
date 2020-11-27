@@ -15,7 +15,7 @@ public class OrderEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "inventory_id")
-    private InventoryEntity inventory;
+    private InventoryEntity inventory; // Mustn't depend on it. All communication should occur ONLY through service layer It's here only to show such possibility
 
     @Column
     private String name;
