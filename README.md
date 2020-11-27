@@ -14,3 +14,6 @@ You can track every change that I made in branches:
 
 ### (Optional) branches
 If branch is (Optional) that mean that those changes is out of the scope of the presentation but there are available ways to further refactoring
+
+## Database
+To query a database (if it's available on a branch) just login to the http://localhost:8080/h2-console
