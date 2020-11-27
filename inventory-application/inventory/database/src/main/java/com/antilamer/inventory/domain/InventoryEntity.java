@@ -3,7 +3,7 @@ package com.antilamer.inventory.domain;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "inventory", schema = "PUBLIC")
+@Table(name = "inventory")
 public class InventoryEntity {
 
     @Id

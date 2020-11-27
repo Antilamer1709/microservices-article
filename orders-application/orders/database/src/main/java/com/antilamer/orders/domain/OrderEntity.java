@@ -3,7 +3,7 @@ package com.antilamer.orders.domain;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "orders", schema = "PUBLIC")
+@Table(name = "orders")
 public class OrderEntity {
 
     @Id
@@ -20,8 +20,8 @@ public class OrderEntity {
     public OrderEntity() {
     }
 
-    public OrderEntity(Integer id, String name) {
-        this.id = id;
+    public OrderEntity(Integer inventoryId, String name) {
+        this.inventoryId = inventoryId;
         this.name = name;
     }
 

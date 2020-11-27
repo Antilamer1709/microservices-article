@@ -1,7 +1,7 @@
 DROP TABLE PUBLIC.orders IF EXISTS;
 CREATE TABLE PUBLIC.orders  (
     id BIGINT IDENTITY NOT NULL PRIMARY KEY,
-    inventoryId BIGINT NOT NULL,
+    inventory_id BIGINT NOT NULL,
     name VARCHAR(64)
 );
 
@@ -14,9 +14,9 @@ CREATE TABLE PUBLIC.inventory  (
 
 alter table PUBLIC.orders
 	add constraint ORDERS_INVENTORY_ID_FK
-		foreign key (inventoryId) references PUBLIC.inventory (id);
+		foreign key (inventory_id) references PUBLIC.inventory (id);
 
 
 
 INSERT INTO PUBLIC.inventory (id, amount, name) VALUES (1, 10, 'Computer');
-INSERT INTO PUBLIC.orders (id, inventoryId, name) VALUES (1, 1, 'Computer for some user');
+INSERT INTO PUBLIC.orders (id, inventory_id, name) VALUES (1, 1, 'Computer for some user');
