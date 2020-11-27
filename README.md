@@ -8,4 +8,5 @@ You can track every change that I made in branches:
 1. single_module - Simple app with single module
 2. maven_core_module - two maven modules (parent + core). Core is the same as single_module but with a new parent
 3. multi_modules - the core module has been split into inventory and orders modules
-4. maven-layered-modules - inventory and orders modules are indpependent apps with layered infrastructure
+3.1. (Optional) maven-layered-modules - inventory and orders modules are indpependent apps with layered infrastructure
+3.2. (Optional) maven-layered-modules-with-jpa - added jpa and h2 database
