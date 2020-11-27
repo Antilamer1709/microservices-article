@@ -17,12 +17,6 @@
             <groupId>com.antilamer.orders</groupId>
             <artifactId>service</artifactId>
             <version>1.0</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.antilamer.orders</groupId>
-                    <artifactId>database</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
     </dependencies>

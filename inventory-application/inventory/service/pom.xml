@@ -18,6 +18,7 @@
             <groupId>com.antilamer.inventory</groupId>
             <artifactId>database</artifactId>
             <version>1.0</version>
+            <optional>true</optional>
         </dependency>
 
     </dependencies>
