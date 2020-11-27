@@ -1,10 +1,21 @@
 package com.antilamer.inventory.dto;
 
+import com.antilamer.inventory.domain.InventoryEntity;
+
 public class InventoryDTO {
 
     private Integer id;
     private Integer amount;
     private String name;
+
+    public InventoryDTO() {
+    }
+
+    public InventoryDTO(InventoryEntity inventoryEntity) {
+        this.id = inventoryEntity.getId();
+        this.amount = inventoryEntity.getAmount();
+        this.name = inventoryEntity.getName();
+    }
 
 
     public Integer getId() {

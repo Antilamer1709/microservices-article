@@ -1,9 +1,20 @@
 package com.antilamer.orders.domain;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "orders", schema = "PUBLIC")
 public class OrderEntity {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private Integer id;
-    private Integer productId;
+
+    @Column
+    private Integer inventoryId;
+
+    @Column
     private String name;
 
     public OrderEntity() {
@@ -23,12 +34,12 @@ public class OrderEntity {
         this.id = id;
     }
 
-    public Integer getProductId() {
-        return productId;
+    public Integer getInventoryId() {
+        return inventoryId;
     }
 
-    public void setProductId(Integer productId) {
-        this.productId = productId;
+    public void setInventoryId(Integer inventoryId) {
+        this.inventoryId = inventoryId;
     }
 
     public String getName() {

@@ -6,6 +6,6 @@ public interface OrdersService {
 
     OrderDTO getOrder(Integer orderId);
 
-    String createOrder(OrderDTO orderDTO);
+    OrderDTO createOrder(OrderDTO orderDTO);
 
 }

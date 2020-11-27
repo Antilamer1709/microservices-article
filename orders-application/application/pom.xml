@@ -13,21 +13,27 @@
 
     <dependencies>
 
+        <!--Orders-->
         <dependency>
             <groupId>com.antilamer.orders</groupId>
             <artifactId>controller</artifactId>
             <version>1.0</version>
         </dependency>
-
         <dependency>
             <groupId>com.antilamer.orders</groupId>
             <artifactId>database</artifactId>
             <version>1.0</version>
         </dependency>
 
+        <!--Inventory-->
         <dependency>
             <groupId>com.antilamer.inventory</groupId>
             <artifactId>controller</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.antilamer.inventory</groupId>
+            <artifactId>database</artifactId>
             <version>1.0</version>
         </dependency>
 

@@ -5,7 +5,7 @@ import com.antilamer.orders.domain.OrderEntity;
 public class OrderDTO {
 
     private Integer id;
-    private Integer productId;
+    private Integer inventoryId;
     private String name;
 
     public OrderDTO() {
@@ -13,7 +13,7 @@ public class OrderDTO {
 
     public OrderDTO(OrderEntity orderEntity) {
         this.id = orderEntity.getId();
-        this.productId = orderEntity.getProductId();
+        this.inventoryId = orderEntity.getInventoryId();
         this.name = orderEntity.getName();
     }
 
@@ -25,12 +25,12 @@ public class OrderDTO {
         this.id = id;
     }
 
-    public Integer getProductId() {
-        return productId;
+    public Integer getInventoryId() {
+        return inventoryId;
     }
 
-    public void setProductId(Integer productId) {
-        this.productId = productId;
+    public void setInventoryId(Integer inventoryId) {
+        this.inventoryId = inventoryId;
     }
 
     public String getName() {

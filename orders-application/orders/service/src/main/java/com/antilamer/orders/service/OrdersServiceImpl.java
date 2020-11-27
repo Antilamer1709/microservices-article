@@ -5,7 +5,6 @@ import com.antilamer.orders.domain.OrderEntity;
 import com.antilamer.orders.dto.OrderDTO;
 import com.antilamer.orders.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -15,23 +14,24 @@ public class OrdersServiceImpl implements OrdersService {
     private OrderRepository orderRepository;
 
     @Autowired
-    @Qualifier("InventoryNot2Service")
     private InventoryService inventoryService;
 
     @Override
     public OrderDTO getOrder(Integer orderId) {
-        OrderEntity orderEntity = orderRepository.findById(orderId);
+        OrderEntity orderEntity = orderRepository
+                .findById(orderId)
+                .orElseThrow(() -> new RuntimeException("There is no such order in the DB"));
         return new OrderDTO(orderEntity);
     }
 
     @Override
-    public String createOrder(OrderDTO orderDTO) {
-        Boolean productAvailable = inventoryService.isProductAvailable(orderDTO.getProductId());
+    public OrderDTO createOrder(OrderDTO orderDTO) {
+        Boolean productAvailable = inventoryService.isProductAvailable(orderDTO.getInventoryId());
         if (!productAvailable) {
-            return "Product with id " + orderDTO.getProductId() + " is not available";
+            throw new RuntimeException("Product with inventoryId " + orderDTO.getInventoryId() + " is not available");
         }
-        orderRepository.save(new OrderEntity(orderDTO.getProductId(), orderDTO.getName()));
-        return "Order of product with id " + orderDTO.getProductId() + " has been created!";
+        OrderEntity orderEntity = orderRepository.save(new OrderEntity(orderDTO.getInventoryId(), orderDTO.getName()));
+        return new OrderDTO(orderEntity);
     }
 
 }
