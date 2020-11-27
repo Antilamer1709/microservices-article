@@ -1,5 +1,7 @@
 package com.antilamer.orders.domain;
 
+import com.antilamer.inventory.domain.InventoryEntity;
+
 import javax.persistence.*;
 
 @Entity
@@ -11,19 +13,12 @@ public class OrderEntity {
     @Column
     private Integer id;
 
-    @Column
-    private Integer inventoryId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "inventory_id")
+    private InventoryEntity inventory;
 
     @Column
     private String name;
-
-    public OrderEntity() {
-    }
-
-    public OrderEntity(Integer inventoryId, String name) {
-        this.inventoryId = inventoryId;
-        this.name = name;
-    }
 
 
     public Integer getId() {
@@ -34,12 +29,12 @@ public class OrderEntity {
         this.id = id;
     }
 
-    public Integer getInventoryId() {
-        return inventoryId;
+    public InventoryEntity getInventory() {
+        return inventory;
     }
 
-    public void setInventoryId(Integer inventoryId) {
-        this.inventoryId = inventoryId;
+    public void setInventory(InventoryEntity inventory) {
+        this.inventory = inventory;
     }
 
     public String getName() {

@@ -1,5 +1,7 @@
 package com.antilamer.orders.service;
 
+import com.antilamer.inventory.domain.InventoryEntity;
+import com.antilamer.inventory.repository.InventoryRepository;
 import com.antilamer.inventory.service.InventoryService;
 import com.antilamer.orders.domain.OrderEntity;
 import com.antilamer.orders.dto.OrderDTO;
@@ -14,6 +16,9 @@ public class OrdersServiceImpl implements OrdersService {
     private OrderRepository orderRepository;
 
     @Autowired
+    private InventoryRepository inventoryRepository;
+
+    @Autowired
     private InventoryService inventoryService;
 
     @Override
@@ -26,12 +31,24 @@ public class OrdersServiceImpl implements OrdersService {
 
     @Override
     public OrderDTO createOrder(OrderDTO orderDTO) {
+        validateInventory(orderDTO);
+
+        OrderEntity orderEntity = new OrderEntity();
+        orderEntity.setName(orderDTO.getName());
+        InventoryEntity inventoryEntity = inventoryRepository
+                .findById(orderDTO.getInventoryId())
+                .orElseThrow(() -> new RuntimeException("There is no such inventory in the DB"));
+        orderEntity.setInventory(inventoryEntity);
+
+        orderRepository.save(orderEntity);
+        return new OrderDTO(orderEntity);
+    }
+
+    private void validateInventory(OrderDTO orderDTO) {
         Boolean productAvailable = inventoryService.isProductAvailable(orderDTO.getInventoryId());
         if (!productAvailable) {
             throw new RuntimeException("Product with inventoryId " + orderDTO.getInventoryId() + " is not available");
         }
-        OrderEntity orderEntity = orderRepository.save(new OrderEntity(orderDTO.getInventoryId(), orderDTO.getName()));
-        return new OrderDTO(orderEntity);
     }
 
 }

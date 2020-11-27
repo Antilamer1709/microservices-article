@@ -13,7 +13,7 @@ public class OrderDTO {
 
     public OrderDTO(OrderEntity orderEntity) {
         this.id = orderEntity.getId();
-        this.inventoryId = orderEntity.getInventoryId();
+        this.inventoryId = orderEntity.getInventory().getId();
         this.name = orderEntity.getName();
     }
 

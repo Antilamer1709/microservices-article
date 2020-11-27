@@ -24,7 +24,7 @@ public class InventoryServiceImpl implements InventoryService {
         inventoryEntity.setAmount(inventoryDTO.getAmount());
         inventoryEntity.setName(inventoryDTO.getName());
 
-        inventoryEntity = inventoryRepository.save(inventoryEntity);
+        inventoryRepository.save(inventoryEntity);
         return new InventoryDTO(inventoryEntity);
     }
 }
